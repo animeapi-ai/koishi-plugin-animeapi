@@ -34,12 +34,13 @@ anime -m ultra a cafe chalkboard that reads OPEN LATE
 | `model` | `anime` | 1 枚 `anime` $0.003、`ultra` $0.01、`ultra-max` $0.02 |
 | `orientation` | `portrait` | `portrait`（縦）、`square`（正方形）、`landscape`（横）。価格は同じ |
 | `enhance` | `true` | プロンプトをタグに自動変換（anime モデル） |
-| `allowNSFW` | **`false`** | NSFW 出力は既定でオフです。該当画像は拒否・返金され、チャットには送信されません |
 | `cooldown` | `30` | ユーザーごとの生成間隔（秒）。`0` で無効 |
 | `allowModelOverride` | `false` | ユーザーが `-m` でモデルを選べるようにします。高価なモデルを選ばれないよう既定でオフ |
 | `showPrompt` | `false` | モデルが受け取ったタグも送信 |
 | `sendAs` | `file` | `file` は画像をダウンロードして送信、`url` はリンクを送信 |
 | `timeout` | `120` | AnimeAPI の応答を待つ秒数 |
+
+AnimeAPI は成人向けコンテンツを生成しません。露骨なプロンプトは拒否され、課金されません。
 
 リクエストは Koishi の HTTP サービス経由なので、Koishi で設定したプロキシが使われます。
 

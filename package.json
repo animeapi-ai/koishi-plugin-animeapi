@@ -1,6 +1,6 @@
 {
   "name": "koishi-plugin-animeapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Anime image generation for Koishi bots with AnimeAPI: $0.003 per image, no subscription. 用 AnimeAPI 生成动漫图片，每张 $0.003。",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",

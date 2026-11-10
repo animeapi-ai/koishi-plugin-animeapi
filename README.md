@@ -34,12 +34,13 @@ Write the prompt in plain words; AnimeAPI rewrites it into tags for the anime mo
 | `model` | `anime` | `anime` $0.003, `ultra` $0.01, `ultra-max` $0.02 per image |
 | `orientation` | `portrait` | `portrait`, `square` or `landscape`; same price |
 | `enhance` | `true` | Rewrite plain prompts into tags (anime model) |
-| `allowNSFW` | **`false`** | NSFW output is off by default. Flagged images are refused and refunded instead of being sent to the chat |
 | `cooldown` | `30` | Seconds each user must wait between images; `0` disables the limit |
 | `allowModelOverride` | `false` | Let users choose a model with `-m`. Off so users cannot pick a more expensive model |
 | `showPrompt` | `false` | Also send the tags the model received |
 | `sendAs` | `file` | `file` downloads the image and sends it; `url` sends the link |
 | `timeout` | `120` | Seconds to wait for AnimeAPI |
+
+AnimeAPI does not generate adult content. Explicit prompts are refused and not charged.
 
 Requests go through Koishi's own HTTP service, so the proxy you set in Koishi applies.
 

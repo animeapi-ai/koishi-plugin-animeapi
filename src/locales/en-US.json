@@ -17,7 +17,6 @@
         "invalid-key": "The bot's AnimeAPI key was not accepted. The bot owner should check it at https://animeapi.ai/dashboard/api-keys",
         "no-balance": "The bot's AnimeAPI balance is empty. The bot owner can add funds at https://animeapi.ai/dashboard/billing",
         "rejected": "The image was rejected: {0}",
-        "blocked-nsfw": "That image was flagged as NSFW and was not sent. Try a different prompt.",
         "busy": "AnimeAPI is busy right now. Try again in a few seconds.",
         "failed": "Image generation failed: {0}",
         "bad-model": "Unknown model. Use anime, ultra or ultra-max.",

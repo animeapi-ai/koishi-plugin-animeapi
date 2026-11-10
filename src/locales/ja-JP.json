@@ -17,7 +17,6 @@
         "invalid-key": "ボットの AnimeAPI キーが無効です。管理者は https://animeapi.ai/dashboard/api-keys で確認してください。",
         "no-balance": "ボットの AnimeAPI 残高がありません。管理者は https://animeapi.ai/dashboard/billing でチャージできます。",
         "rejected": "画像が拒否されました：{0}",
-        "blocked-nsfw": "この画像は NSFW と判定されたため送信しませんでした。別のプロンプトをお試しください。",
         "busy": "AnimeAPI が混雑しています。数秒後にもう一度お試しください。",
         "failed": "画像生成に失敗しました：{0}",
         "bad-model": "不明なモデルです。anime、ultra、ultra-max から選んでください。",

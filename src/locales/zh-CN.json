@@ -17,7 +17,6 @@
         "invalid-key": "机器人的 AnimeAPI 密钥无效，请管理员在 https://animeapi.ai/dashboard/api-keys 检查。",
         "no-balance": "机器人的 AnimeAPI 余额不足，管理员可在 https://animeapi.ai/dashboard/billing 充值。",
         "rejected": "图片被拒绝：{0}",
-        "blocked-nsfw": "该图片被判定为 NSFW，未发送。请换一个提示词。",
         "busy": "AnimeAPI 当前繁忙，请稍后重试。",
         "failed": "图片生成失败：{0}",
         "bad-model": "未知模型，可选 anime、ultra、ultra-max。",

@@ -34,12 +34,13 @@ anime -m ultra a cafe chalkboard that reads OPEN LATE
 | `model` | `anime` | 每张 `anime` $0.003、`ultra` $0.01、`ultra-max` $0.02 |
 | `orientation` | `portrait` | `portrait`（竖）、`square`（方）、`landscape`（横），价格相同 |
 | `enhance` | `true` | 自动把提示词改写为标签（anime 模型） |
-| `allowNSFW` | **`false`** | 默认关闭 NSFW 输出。被标记的图片会被拒绝并退款，不会发到聊天中 |
 | `cooldown` | `30` | 每位用户两次生成之间的间隔（秒），`0` 为不限制 |
 | `allowModelOverride` | `false` | 是否允许用户用 `-m` 选择模型。默认关闭，避免用户选用更贵的模型 |
 | `showPrompt` | `false` | 同时发送模型实际收到的标签 |
 | `sendAs` | `file` | `file` 下载后发送图片文件；`url` 直接发送链接 |
 | `timeout` | `120` | 等待 AnimeAPI 的秒数 |
+
+AnimeAPI 不生成成人内容。露骨的提示词会被拒绝，且不收费。
 
 请求通过 Koishi 自带的 HTTP 服务发出，因此会使用你在 Koishi 中配置的代理。
 

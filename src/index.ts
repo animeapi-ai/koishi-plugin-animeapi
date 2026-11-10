@@ -20,7 +20,6 @@ export interface Config {
   apiKey: string
   model: Model
   orientation: Orientation
-  allowNSFW: boolean
   enhance: boolean
   cooldown: number
   allowModelOverride: boolean
@@ -45,7 +44,6 @@ export const Config: Schema<Config> = Schema.intersect([
       Schema.const('landscape').description('landscape'),
     ]).default('portrait').description('Default image shape. The price is the same for every shape.'),
     enhance: Schema.boolean().default(true).description('Let AnimeAPI rewrite plain-language prompts into tags (anime model).'),
-    allowNSFW: Schema.boolean().default(false).description('Allow NSFW output. Off by default: flagged images are refused and refunded instead of being sent.'),
   }).description('Image'),
   Schema.object({
     cooldown: Schema.natural().default(30).description('Seconds each user must wait between images. 0 turns the limit off.'),
@@ -101,12 +99,11 @@ export function apply(ctx: Context, config: Config) {
         const data: any = res.data ?? {}
         if (res.status >= 200 && res.status < 300 && data.image_url) return data as GenerateResult
         const message = typeof data.error === 'string' ? data.error : data.error?.message ?? `HTTP ${res.status}`
-        const nsfwBlocked = body.allowNSFW === false && /nsfw/i.test(message)
         failure = {
           status: res.status,
-          code: nsfwBlocked ? 'NSFW_BLOCKED' : (data.code ?? ''),
+          code: data.code ?? '',
           message,
-          retryable: !nsfwBlocked && (data.retryable === true || res.status === 500 || res.status === 503),
+          retryable: data.retryable === true || res.status === 500 || res.status === 503,
         }
         if (failure.retryable && attempt < 2) {
           const retryAfter = Number(res.headers?.get?.('retry-after')) || 3
@@ -164,7 +161,7 @@ export function apply(ctx: Context, config: Config) {
 
       inFlight.add(user)
       try {
-        const result = await request({ prompt, model, orientation, enhance: config.enhance, allowNSFW: config.allowNSFW })
+        const result = await request({ prompt, model, orientation, enhance: config.enhance })
         if ('image_url' in result) {
           lastUse.set(user, Date.now())
           logger.info('image for %s in %dms, balance $%s', user, result.generation_time_ms, Number(result.balance_usd).toFixed(3))
@@ -175,7 +172,6 @@ export function apply(ctx: Context, config: Config) {
         logger.warn('generation failed: %d %s %s', result.status, result.code, result.message)
         if (result.status === 402) return session.text('.no-balance')
         if (result.status === 401) return session.text('.invalid-key')
-        if (result.code === 'NSFW_BLOCKED') return session.text('.blocked-nsfw')
         if (result.code === 'MODERATION_BLOCKED' || result.code === 'PROVIDER_REJECTED') return session.text('.rejected', [result.message])
         if (result.status === 503 || result.status === 429) return session.text('.busy')
         return session.text('.failed', [result.message])
