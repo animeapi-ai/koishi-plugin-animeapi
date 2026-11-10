@@ -1,0 +1,62 @@
+{
+  "name": "koishi-plugin-animeapi",
+  "version": "1.0.0",
+  "description": "Anime image generation for Koishi bots with AnimeAPI: $0.003 per image, no subscription. 用 AnimeAPI 生成动漫图片，每张 $0.003。",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "author": "AnimeAPI <contact@animeapi.ai> (https://animeapi.ai)",
+  "homepage": "https://github.com/animeapi-ai/koishi-plugin-animeapi#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/animeapi-ai/koishi-plugin-animeapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/animeapi-ai/koishi-plugin-animeapi/issues"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-locales.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "anime",
+    "image",
+    "ai",
+    "ai-art",
+    "image-generation",
+    "text-to-image",
+    "animeapi",
+    "画图",
+    "绘画"
+  ],
+  "koishi": {
+    "description": {
+      "en": "Anime image generation with AnimeAPI: $0.003 per image, prepaid from $5, no subscription. 3 free images for new accounts.",
+      "zh": "使用 AnimeAPI 生成动漫图片：每张 $0.003，预付 $5 起，无订阅。新账号免费 3 张。",
+      "ja": "AnimeAPI でアニメ画像を生成：1 枚 $0.003、プリペイド $5 から、サブスクなし。新規アカウントは無料 3 枚。"
+    },
+    "service": {
+      "required": [
+        "http"
+      ]
+    },
+    "locales": [
+      "en",
+      "zh",
+      "ja"
+    ]
+  },
+  "peerDependencies": {
+    "koishi": "^4.17.0"
+  },
+  "devDependencies": {
+    "koishi": "^4.18.11",
+    "typescript": "^5.6.0"
+  }
+}

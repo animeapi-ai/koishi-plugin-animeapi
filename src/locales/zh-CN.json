@@ -1,0 +1,29 @@
+{
+  "commands": {
+    "anime": {
+      "description": "使用 AnimeAPI 生成动漫图片",
+      "usage": "用自然语言描述画面即可。示例：anime 雨天公交站打着红伞的女孩",
+      "options": {
+        "model": "模型：anime、ultra 或 ultra-max",
+        "orientation": "画幅：portrait（竖）、square（方）或 landscape（横）"
+      },
+      "messages": {
+        "no-prompt": "请告诉我要画什么，例如：anime 打着红伞的女孩",
+        "too-long": "提示词太长了，请控制在 1000 个字符以内。",
+        "cooldown": "请等待 {0} 秒后再生成。",
+        "busy-user": "你的上一张图还在绘制中。",
+        "generating": "正在绘制…",
+        "no-key": "尚未配置 AnimeAPI。请机器人管理员在插件设置中填写 API 密钥（在 https://animeapi.ai/dashboard/api-keys 获取）。",
+        "invalid-key": "机器人的 AnimeAPI 密钥无效，请管理员在 https://animeapi.ai/dashboard/api-keys 检查。",
+        "no-balance": "机器人的 AnimeAPI 余额不足，管理员可在 https://animeapi.ai/dashboard/billing 充值。",
+        "rejected": "图片被拒绝：{0}",
+        "blocked-nsfw": "该图片被判定为 NSFW，未发送。请换一个提示词。",
+        "busy": "AnimeAPI 当前繁忙，请稍后重试。",
+        "failed": "图片生成失败：{0}",
+        "bad-model": "未知模型，可选 anime、ultra、ultra-max。",
+        "bad-orientation": "未知画幅，可选 portrait、square、landscape。",
+        "model-locked": "此机器人只启用了默认模型。"
+      }
+    }
+  }
+}

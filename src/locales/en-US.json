@@ -1,0 +1,29 @@
+{
+  "commands": {
+    "anime": {
+      "description": "Generate an anime image with AnimeAPI",
+      "usage": "Describe the picture in plain words. Example: anime a girl with a red umbrella at a rainy bus stop",
+      "options": {
+        "model": "model: anime, ultra or ultra-max",
+        "orientation": "shape: portrait, square or landscape"
+      },
+      "messages": {
+        "no-prompt": "Tell me what to draw, for example: anime a girl with a red umbrella",
+        "too-long": "That prompt is too long. Keep it under 1000 characters.",
+        "cooldown": "Please wait {0}s before generating another image.",
+        "busy-user": "Your previous image is still being drawn.",
+        "generating": "Drawing…",
+        "no-key": "AnimeAPI is not set up yet. The bot owner needs to add an API key in the plugin settings (get one at https://animeapi.ai/dashboard/api-keys).",
+        "invalid-key": "The bot's AnimeAPI key was not accepted. The bot owner should check it at https://animeapi.ai/dashboard/api-keys",
+        "no-balance": "The bot's AnimeAPI balance is empty. The bot owner can add funds at https://animeapi.ai/dashboard/billing",
+        "rejected": "The image was rejected: {0}",
+        "blocked-nsfw": "That image was flagged as NSFW and was not sent. Try a different prompt.",
+        "busy": "AnimeAPI is busy right now. Try again in a few seconds.",
+        "failed": "Image generation failed: {0}",
+        "bad-model": "Unknown model. Use anime, ultra or ultra-max.",
+        "bad-orientation": "Unknown orientation. Use portrait, square or landscape.",
+        "model-locked": "Only the default model is enabled on this bot."
+      }
+    }
+  }
+}

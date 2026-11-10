@@ -1,0 +1,29 @@
+{
+  "commands": {
+    "anime": {
+      "description": "AnimeAPI でアニメ画像を生成",
+      "usage": "描きたい内容を文章で入力してください。例：anime 雨のバス停で赤い傘をさす少女",
+      "options": {
+        "model": "モデル：anime、ultra、ultra-max",
+        "orientation": "向き：portrait（縦）、square（正方形）、landscape（横）"
+      },
+      "messages": {
+        "no-prompt": "何を描くか教えてください。例：anime 赤い傘の少女",
+        "too-long": "プロンプトが長すぎます。1000 文字以内にしてください。",
+        "cooldown": "次の生成まで {0} 秒お待ちください。",
+        "busy-user": "前の画像をまだ描いています。",
+        "generating": "描いています…",
+        "no-key": "AnimeAPI が未設定です。ボットの管理者がプラグイン設定で API キーを入力してください（https://animeapi.ai/dashboard/api-keys で取得）。",
+        "invalid-key": "ボットの AnimeAPI キーが無効です。管理者は https://animeapi.ai/dashboard/api-keys で確認してください。",
+        "no-balance": "ボットの AnimeAPI 残高がありません。管理者は https://animeapi.ai/dashboard/billing でチャージできます。",
+        "rejected": "画像が拒否されました：{0}",
+        "blocked-nsfw": "この画像は NSFW と判定されたため送信しませんでした。別のプロンプトをお試しください。",
+        "busy": "AnimeAPI が混雑しています。数秒後にもう一度お試しください。",
+        "failed": "画像生成に失敗しました：{0}",
+        "bad-model": "不明なモデルです。anime、ultra、ultra-max から選んでください。",
+        "bad-orientation": "不明な向きです。portrait、square、landscape から選んでください。",
+        "model-locked": "このボットでは既定のモデルのみ利用できます。"
+      }
+    }
+  }
+}
